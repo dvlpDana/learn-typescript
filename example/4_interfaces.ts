@@ -8,7 +8,7 @@ interface User {
 const seho: User = { name: 'hi', age: 100 };
 
 // 함수의 매개변수에 사용하는 경우
-function getUser(user: User) {
+function getUser(user: User): void {
   console.log(user);
 }
 getUser(seho);
@@ -29,6 +29,22 @@ getUser(seho);
 // let arr: StringArray;
 // arr[0] = 'hi';
 // arr[1] = 10;
+
+//딕셔너리 패턴
+interface StringRegexDictionary {
+  [key: string]: RegExp;
+}
+
+let obj:StringRegexDictionary = {
+  cssFile: /\.css$/,
+  jsFile: /\.js$/,
+}
+
+obj['cssFile'] = a
+
+Object.keys(obj).forEach(function (value) {
+  
+})
 
 // 인터페이스 확장
 interface Person {

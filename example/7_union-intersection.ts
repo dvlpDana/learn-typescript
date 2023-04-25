@@ -38,3 +38,14 @@ function askSomeone(someone: Developer | Person) {
   someone.name; // O
   someone.age; // X
 }
+
+askSomeone({ name: 'John', age: '100' }) //Person의 interface에 맞는 값 넣기
+askSomeone({ name: '준호', skill: '웹개발' }) //Developer의 interface에 맞는 값 넣기
+
+function askSomeone2(someone: Developer & Person) {
+  someone.name; // O
+  someone.skill // O
+  someone.age; // O
+}
+
+askSomeone2({ name: 'John', age: '100' }) //skill이 없으면 에러 생김

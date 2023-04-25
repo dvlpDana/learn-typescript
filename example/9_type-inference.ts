@@ -5,6 +5,8 @@ function logA(a = 'a') {
   return b;
 }
 
+10 + '10' // 1010
+
 interface Dropdown<T> {
   value: T
   title: string;

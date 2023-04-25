@@ -38,6 +38,7 @@ interface ShoppingItems {
   address: string;
   stock: number;
 }
+//제네릭의 타입의 범위를 줄이고자 할 때, key of를 사용할 수 있음
 function getAllowedOptions<T extends keyof ShoppingItems>(option: T): T {
   if (option === 'name' || option === 'address') {
     console.log('option type is string');
@@ -48,6 +49,7 @@ function getAllowedOptions<T extends keyof ShoppingItems>(option: T): T {
     return option;
   }
 }
+getAllowedOptions("address")
 getAllowedOptions('nothing');
 // const a = getAllowedOptions('name');
 // a.toUpperCase(); // Name
